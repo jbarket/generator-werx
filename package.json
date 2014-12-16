@@ -1,7 +1,10 @@
 {
   "name": "generator-werx",
-  "version": "0.0.1",
-  "dependencies": {},
+  "version": "0.0.2",
+  "dependencies": {
+    "yeoman-generator": "^0.17.3"
+  },
+  "keywords": ["yeoman-generator"],
   "files": [
     "model",
     "validator",
