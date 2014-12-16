@@ -1,4 +1,4 @@
-# generator-werx [![Build Status](https://secure.travis-ci.org/jbarket/generator-werx.png?branch=master)](https://travis-ci.org/jbarket/generator-werx)
+# generator-werx
 
 > [Yeoman](http://yeoman.io) generator for the [werx](http://werx.github.io) PHP microframework.
 
@@ -15,6 +15,10 @@ Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](
 ```bash
 npm install -g yo
 ```
+
+## How do I install this thing?
+
+npm install -g generator-werx
 
 ## Available Commands
 
