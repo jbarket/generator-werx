@@ -20,8 +20,16 @@ npm install -g yo
 
 ### yo werx:model (Model Name)
 
+Generates an Eloquent model in src/models
+
 ### yo werx:controller (Controller Name)
+
+Generates a controller in src/controllers
 
 ### yo werx:console (Console Controller Name)
 
+Generates a console only controller in src/controllers
+
 ### yo werx:validator (Validator Name)
+
+Generates a validator in src/validators
