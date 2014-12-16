@@ -1,8 +1,8 @@
 {
   "name": "generator-werx",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
-    "yeoman-generator": "^0.17.3"
+    "yeoman-generator": "^0.18.4"
   },
   "keywords": ["yeoman-generator"],
   "files": [
