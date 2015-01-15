@@ -22,6 +22,10 @@ npm install -g generator-werx
 
 ## Available Commands
 
+### yo werx:crud (Controller Name)
+
+Generates skeleton CRUD including a controller, model, validator and view files.
+
 ### yo werx:model (Model Name)
 
 Generates an Eloquent model in src/models

@@ -1,14 +1,16 @@
 {
   "name": "generator-werx",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "dependencies": {
-    "yeoman-generator": "^0.18.4"
+    "yeoman-generator": "^0.18.4",
+    "inflected": "1.1.6"
   },
   "keywords": ["yeoman-generator"],
   "files": [
     "model",
     "validator",
     "controller",
-    "console"
+    "console",
+    "scaffold"
   ]
 }

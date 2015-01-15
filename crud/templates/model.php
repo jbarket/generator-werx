@@ -5,13 +5,16 @@ namespace <%= root_namespace %>\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class <%= name %>
+ * Class <%= model_name %>
  *
  * @property string $column1
  *
  * @codeCoverageIgnore
  */
-class <%= name %> extends Model
+class <%= model_name %> extends Model
 {
+    // white list fillable attributes
+    protected $fillable = [];
+
     public $timestamps = false;
 }

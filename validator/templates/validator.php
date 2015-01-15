@@ -13,4 +13,3 @@ class <%= name %> extends Ruleset
         $this->addRule('email', 'Email Address', 'required|email');
     }
 }
-
