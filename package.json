@@ -1,6 +1,6 @@
 {
   "name": "generator-werx",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "dependencies": {
     "yeoman-generator": "^0.18.4",
     "inflected": "1.1.6"
