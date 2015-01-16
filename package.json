@@ -1,6 +1,6 @@
 {
   "name": "generator-werx",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "dependencies": {
     "yeoman-generator": "^0.18.4",
     "inflected": "1.1.6"
@@ -11,6 +11,7 @@
     "validator",
     "controller",
     "console",
-    "scaffold"
+    "scaffold",
+    "crud"
   ]
 }
