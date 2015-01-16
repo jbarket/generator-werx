@@ -6,7 +6,7 @@ use werx\Core\Controller;
 use werx\Core\Database as DB;
 use <%= root_namespace %>\Validators as Validators;
 use <%= root_namespace %>\Models as Models;
-use werx\Messages\Messages as Messages;
+use werx\Messages\Messages;
 use werx\Forms\Form;
 
 
@@ -33,6 +33,9 @@ class <%= controller_name %> extends Controller
 
         // Initialize our database.
         DB::init($this->config->database('default'));
+
+        // Initialize messages.
+        Messages::getInstance($this->session);
     }
 
     public function index()
@@ -61,7 +64,7 @@ class <%= controller_name %> extends Controller
 
             $this->redirect('<%= inflector.underscore(controller_name) %>/index');
         }
-        else 
+        else
         {
             foreach ($validator->getErrorSummary() as $message) {
                 Messages::error($message);
@@ -92,7 +95,7 @@ class <%= controller_name %> extends Controller
             Messages::success("New <%= inflector.underscore(model_name) %> was successfully created.");
             $this->redirect('<%= inflector.underscore(controller_name) %>/index');
         }
-        else 
+        else
         {
             foreach ($validator->getErrorSummary() as $message) {
                 Messages::error($message);
@@ -113,4 +116,3 @@ class <%= controller_name %> extends Controller
     }
 
 }
-
