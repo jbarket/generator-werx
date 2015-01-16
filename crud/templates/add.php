@@ -1,6 +1,6 @@
 <h1>New <%= model_name %></h1>
 
-<form action="<?= $this->url()->action('/<%= inflector.underscore(controller_name) %>/create') ?>" role="form" method="post" class="form-horizontal">
+<form action="<?= $this->url()->action('<%= inflector.underscore(controller_name) %>/create') ?>" role="form" method="post" class="form-horizontal">
 
     <?php $this->insert('<%= inflector.underscore(controller_name) %>/partials/form') ?>
 
