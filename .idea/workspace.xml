@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1497a301-eeac-4c22-b9cf-f0e4c82a7487" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/crud/templates/model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/crud/templates/validator.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crud/index.js" afterPath="$PROJECT_DIR$/crud/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/index.js" afterPath="$PROJECT_DIR$/model/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/validator/index.js" afterPath="$PROJECT_DIR$/validator/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/templates/model.php" afterPath="$PROJECT_DIR$/model/templates/model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/validator/templates/validator.php" afterPath="$PROJECT_DIR$/validator/templates/validator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crud/templates/model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/crud/templates/validator.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="generator-werx.iws" />
@@ -102,8 +96,8 @@
           <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.032583397" vertical-offset="0" max-vertical-offset="1289">
-                  <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+                <state vertical-scroll-proportion="0.26066718" vertical-offset="0" max-vertical-offset="1289">
+                  <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -488,7 +482,13 @@
       <option name="project" value="LOCAL" />
       <updated>1422049919429</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Crud now uses composability to call model and validator rather than recreating them. Model and validator modified to take options and args to skip over asking the same questions multiple times">
+      <created>1422051719098</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1422051719098</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -507,7 +507,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21914062" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21914062" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -562,7 +562,8 @@
     <MESSAGE value="right, you have to pass npm the files" />
     <MESSAGE value="Incrementing npm version to include new changes from Josh" />
     <MESSAGE value="Modified crud and controller templates to use werx 1.4.0 Base controller. Added manager for crud for better code separation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified crud and controller templates to use werx 1.4.0 Base controller. Added manager for crud for better code separation" />
+    <MESSAGE value="Crud now uses composability to call model and validator rather than recreating them. Model and validator modified to take options and args to skip over asking the same questions multiple times" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crud now uses composability to call model and validator rather than recreating them. Model and validator modified to take options and args to skip over asking the same questions multiple times" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -912,8 +913,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.032583397" vertical-offset="0" max-vertical-offset="1289">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.26066718" vertical-offset="0" max-vertical-offset="1289">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding />
         </state>
       </provider>
