@@ -3,22 +3,39 @@ var yeoman = require('yeoman-generator');
 
 module.exports = yeoman.generators.Base.extend({
   initializing: function () {
+
     this.argument('name', {
       required: false,
       type: String,
       desc: 'Model name (singular)'
     });
+
+    this.option('name');
+    this.option('root_namespace');
+    this.option('ignore_config');
+
+    if (this.options.name) {
+      this.name = this.options.name;
+    }
+
+    if (this.options.root_namespace) {
+      this.root_namespace = this.options.root_namespace;
+    }
   },
 
   prompting: function () {
     var done = this.async();
 
-    var prompts = [{
-      type: 'input',
-      name: 'root_namespace',
-      message: "What's the root namespace for this application?",
-      default: this.config.get('root_namespace')
-    }];
+    var prompts = [];
+
+    if (!this.root_namespace) {
+      prompts.push({
+        type: 'input',
+        name: 'root_namespace',
+        message: "What's the root namespace for this application?",
+        default: this.config.get('root_namespace')
+      });
+    }
 
     if (!this.name) {
 
@@ -36,13 +53,17 @@ module.exports = yeoman.generators.Base.extend({
         this.name = props.name;
       }
 
-      this.root_namespace = props.root_namespace;
+      if (!this.root_namespace) {
+        this.root_namespace = props.root_namespace;
+      }
+
       this.config.set('root_namespace', this.root_namespace);
-      this.log(this.config.get('root_namespace'));
       done();
     }.bind(this));
 
-    this.config.save();
+    if (!this.options.ignore_config) {
+      this.config.save();
+    }
 
 
   },

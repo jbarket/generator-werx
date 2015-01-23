@@ -9,6 +9,7 @@ module.exports = yeoman.generators.Base.extend({
             type: String,
             desc: 'Controller name (plural)'
         });
+
     },
 
     prompting: function () {
@@ -47,7 +48,22 @@ module.exports = yeoman.generators.Base.extend({
         this.config.save();
 
     },
-
+    model: function() {
+        this.composeWith('werx:model', { options: {
+            'name': this.model_name,
+            'root_namespace': this.root_namespace,
+            'ignore_config': true
+        }
+        });
+    },
+    validator: function() {
+        this.composeWith('werx:validator', { options: {
+            'name': this.model_name,
+            'root_namespace': this.root_namespace,
+            'ignore_config': true
+        }
+        });
+    },
     writing: function () {
         this.log('Generating CRUD controller for ' + this.controller_name);
 
@@ -61,18 +77,6 @@ module.exports = yeoman.generators.Base.extend({
             this.templatePath('manager.php'),
             this.destinationPath('src/managers/' + this.model_name + '.php'),
             { inflector: inflector, controller_name: this.controller_name, model_name: this.model_name, root_namespace: this.root_namespace}
-        );
-
-        this.fs.copyTpl(
-            this.templatePath('model.php'),
-            this.destinationPath('src/models/' + this.model_name + '.php'),
-            { model_name: this.model_name, root_namespace: this.root_namespace}
-        );
-
-        this.fs.copyTpl(
-            this.templatePath('validator.php'),
-            this.destinationPath('src/validators/' + this.model_name + '.php'),
-            { model_name: this.model_name, root_namespace: this.root_namespace}
         );
 
         this.fs.copyTpl(

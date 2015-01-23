@@ -13,5 +13,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class <%= name %> extends Model
 {
+    // white list fillable attributes
+    protected $fillable = [];
+
     public $timestamps = false;
 }
