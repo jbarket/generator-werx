@@ -75,7 +75,7 @@ module.exports = yeoman.generators.Base.extend({
 
         this.fs.copyTpl(
             this.templatePath('manager.php'),
-            this.destinationPath('src/managers/' + this.model_name + '.php'),
+            this.destinationPath('src/managers/' + this.model_name + 'Manager.php'),
             { inflector: inflector, controller_name: this.controller_name, model_name: this.model_name, root_namespace: this.root_namespace}
         );
 
