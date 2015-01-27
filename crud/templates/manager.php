@@ -39,7 +39,7 @@ class <%= model_name %>Manager {
 
     public static function Update<%= model_name %>(Models\<%= model_name %> $<%= inflector.underscore(model_name) %>, $data)
     {
-        $<%= inflector.underscore(model_name) %>->fill($this->input->post());
+        $<%= inflector.underscore(model_name) %>->fill($data);
         $<%= inflector.underscore(model_name) %>->save();
 
         Messages::success("<%= model_name %> was successfully updated.");
