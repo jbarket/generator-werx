@@ -2,8 +2,8 @@
 <% if (root_namespace) { %>
 namespace <%= root_namespace %>\Controllers;
 <% } %>
-use <%= root_namespace %>\Models as Models;
-use <%= root_namespace %>\Managers as Managers;
+use <%= root_namespace %>\Models;
+use <%= root_namespace %>\Managers;
 
 use werx\Forms\Form;
 
@@ -19,6 +19,7 @@ class <%= controller_name %> extends Base
 
         // Set some variables for all views.
         $this->template->page_title = 'Werx Skeleton';
+        $this-><%= model_name %>Manager = new Managers\<%= model_name %>Manager($this->config);
     }
 
     public function index()
@@ -37,10 +38,10 @@ class <%= controller_name %> extends Base
     public function update($id)
     {
         $<%= inflector.underscore(model_name) %> = Models\<%= model_name %>::findOrFail($id);
-        $valid = Managers\<%= model_name %>Manager::Validate($this->input->post());
+        $valid = $this-><%= model_name %>Manager->Validate($this->input->post());
 
         if ($valid) {
-            Managers\<%= model_name %>Manager::Update<%= model_name %>($<%= inflector.underscore(model_name) %>, $this->input->post());
+            $this-><%= model_name %>Manager->Update<%= model_name %>($<%= inflector.underscore(model_name) %>, $this->input->post());
             $this->redirect('<%= inflector.underscore(controller_name) %>/index');
         }
         else
@@ -57,10 +58,10 @@ class <%= controller_name %> extends Base
 
     public function create()
     {
-        $valid = Managers\<%= model_name %>Manager::Validate($this->input->post());
+        $valid = $this-><%= model_name %>Manager->Validate($this->input->post());
 
         if ($valid) {
-            Managers\<%= model_name %>Manager::Create<%= model_name %>($this->input->post());
+            $this-><%= model_name %>Manager->Create<%= model_name %>($this->input->post());
             $this->redirect('<%= inflector.underscore(controller_name) %>/index');
         }
         else
@@ -71,7 +72,7 @@ class <%= controller_name %> extends Base
 
     public function destroy($id)
     {
-        Managers\<%= model_name %>Manager::Destroy<%= model_name %>($id);
+        $this-><%= model_name %>Manager->Destroy<%= model_name %>($id);
         $this->redirect('<%= inflector.underscore(controller_name) %>/index');
     }
 
