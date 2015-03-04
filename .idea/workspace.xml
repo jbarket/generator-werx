@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1497a301-eeac-4c22-b9cf-f0e4c82a7487" name="Default" comment="Increme">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crud/templates/controller.php" afterPath="$PROJECT_DIR$/crud/templates/controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crud/templates/manager.php" afterPath="$PROJECT_DIR$/crud/templates/manager.php" />
+    <list default="true" id="1497a301-eeac-4c22-b9cf-f0e4c82a7487" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="generator-werx.iws" />
@@ -39,10 +38,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.02320442" vertical-offset="0" max-vertical-offset="905">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="147">
               <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
               <folding />
             </state>
@@ -91,10 +90,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5555556" vertical-offset="0" max-vertical-offset="462">
+            <state vertical-scroll-proportion="0.047945205" vertical-offset="0" max-vertical-offset="876">
               <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               <folding />
             </state>
@@ -160,9 +159,9 @@
         <option value="$PROJECT_DIR$/validator/index.js" />
         <option value="$PROJECT_DIR$/crud/index.js" />
         <option value="$PROJECT_DIR$/app/index.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/crud/templates/manager.php" />
         <option value="$PROJECT_DIR$/crud/templates/controller.php" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -401,13 +400,20 @@
       <option name="project" value="LOCAL" />
       <updated>1422378689967</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Modified Manager strategy so that we're always creating an instance of it and passing in the config. This is completely unused in the generated crud, but I've found that more often than not if I need to do something additional, I want to access config items.">
+      <created>1425488687103</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1425488687103</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="2560" y="260" width="1680" height="1023" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -424,7 +430,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296131" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -478,7 +483,8 @@
     <MESSAGE value="Crud now uses composability to call model and validator rather than recreating them. Model and validator modified to take options and args to skip over asking the same questions multiple times" />
     <MESSAGE value="Fixed problem with manager where it wasn't using passed in param" />
     <MESSAGE value="Renamed manager end file to prevent werx issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed manager end file to prevent werx issues" />
+    <MESSAGE value="Modified Manager strategy so that we're always creating an instance of it and passing in the config. This is completely unused in the generated crud, but I've found that more often than not if I need to do something additional, I want to access config items." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified Manager strategy so that we're always creating an instance of it and passing in the config. This is completely unused in the generated crud, but I've found that more often than not if I need to do something additional, I want to access config items." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -788,14 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5555556" vertical-offset="0" max-vertical-offset="462">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crud/templates/controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.333334" vertical-offset="0" max-vertical-offset="1785">
@@ -848,8 +846,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02320442" vertical-offset="0" max-vertical-offset="905">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="147">
           <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.047945205" vertical-offset="0" max-vertical-offset="876">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <folding />
         </state>
       </provider>
