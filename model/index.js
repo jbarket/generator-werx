@@ -35,7 +35,8 @@ module.exports = yeoman.generators.Base.extend({
 
         this.fs.copyTpl(
             this.templatePath('model.php'),
-            this.destinationPath('src/models/' + this.name + '.php'), { name: this.name, root_namespace: this.config.get('root_namespace')}
+            this.destinationPath('src/models/' + this.name + '.php'),
+            { name: this.name, root_namespace: this.config.get('root_namespace')}
         );
     }
 });

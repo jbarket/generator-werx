@@ -6,7 +6,7 @@ module.exports = yeoman.generators.Base.extend({
         var done = this.async();
 
         var prompts = [
-            { type: 'input', message: "Root Namespace:", default: this.config.get('root_namespace') }
+            { type: 'input', name: 'root_namespace', message: "Root Namespace:", default: this.config.get('root_namespace') }
         ];
 
         this.prompt(prompts, function (props) {

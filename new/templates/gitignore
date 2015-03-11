@@ -1,0 +1,5 @@
+.DS_*
+._*
+/vendor
+/composer.lock
+.idea
