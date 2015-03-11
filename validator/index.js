@@ -2,78 +2,41 @@
 var yeoman = require('yeoman-generator');
 
 module.exports = yeoman.generators.Base.extend({
+    config: function () {
+        this.argument('name', { required: false, type: String, desc: 'Validator name' });
 
-  initializing: function () {
-    this.argument('name', {
-      required: false,
-      type: String,
-      desc: 'Validator name'
-    });
+        // pass through for composeWith
+        this.option('name');
+        if (this.options.name) { this.name = this.options.name; }
 
-    this.option('name');
-    this.option('root_namespace');
-    this.option('ignore_config');
+        if (this.config.get('root_namespace') == null) {
+            this.composeWith('werx:config');
+        }
+    },
 
-    if (this.options.name) {
-      this.name = this.options.name;
+    prompts: function () {
+        var done = this.async();
+
+        var prompts = [];
+
+        if (!this.name) {
+            prompts.push({ type: 'input', name: 'name', message: 'Validator Name:' });
+        }
+
+        this.prompt(prompts, function (props) {
+            if (!this.name) { this.name = props.name; }
+            done();
+        }.bind(this));
+
+    },
+
+    writing: function () {
+        this.log('Generating validator for ' + this.name);
+
+        this.fs.copyTpl(
+            this.templatePath('validator.php'),
+            this.destinationPath('src/validators/' + this.name + '.php'),
+            { name: this.name, root_namespace: this.config.get('root_namespace') }
+        );
     }
-
-    if (this.options.root_namespace) {
-      this.root_namespace = this.options.root_namespace;
-    }
-  },
-
-  prompting: function () {
-    var done = this.async();
-
-    var prompts = [];
-
-    if (!this.root_namespace) {
-      prompts.push({
-        type: 'input',
-        name: 'root_namespace',
-        message: "What's the root namespace for this application?",
-        default: this.config.get('root_namespace')
-      });
-    }
-
-    if (!this.name) {
-
-      prompts.push({
-        type: 'input',
-        name: 'name',
-        message: 'What should we call this validator?'
-      });
-
-    }
-
-    this.prompt(prompts, function (props) {
-
-      if (!this.name) {
-        this.name = props.name;
-      }
-
-      if (!this.root_namespace) {
-        this.root_namespace = props.root_namespace;
-      }
-
-      this.config.set('root_namespace', this.root_namespace);
-      done();
-    }.bind(this));
-
-    if (!this.options.ignore_config) {
-      this.config.save();
-    }
-
-  },
-
-  writing: function () {
-    this.log('Generating validator for ' + this.name);
-
-    this.fs.copyTpl(
-        this.templatePath('validator.php'),
-        this.destinationPath('src/validators/' + this.name + '.php'),
-        { name: this.name, root_namespace: this.root_namespace}
-    );
-  }
 });

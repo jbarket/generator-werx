@@ -2,58 +2,36 @@
 var yeoman = require('yeoman-generator');
 
 module.exports = yeoman.generators.Base.extend({
-  initializing: function () {
-    this.argument('name', {
-      required: false,
-      type: String,
-      desc: 'Controller name (plural)'
-    });
-  },
+    config: function () {
+        this.argument('name', { required: false, type: String, desc: 'Controller name (plural)' });
 
-  prompting: function () {
-    var done = this.async();
+        if (this.config.get('root_namespace') == null) {
+            this.composeWith('werx:config');
+        }
+    },
 
-    var prompts = [{
-      type: 'input',
-      name: 'root_namespace',
-      message: "What's the root namespace for this application?",
-      default: this.config.get('root_namespace')
-    }];
+    prompts: function () {
+        var done = this.async();
 
-    if (!this.name) {
+        var prompts = [];
 
-      prompts.push({
-        type: 'input',
-        name: 'name',
-        message: 'What should we call this controller?'
-      });
+        if (!this.name) {
+            prompts.push({ type: 'input', name: 'name', message: 'Controller Name:' });
+        }
 
+        this.prompt(prompts, function (props) {
+            if (!this.name) { this.name = props.name; }
+            done();
+        }.bind(this));
+
+    },
+
+    writing: function () {
+        this.log('Generating controller for ' + this.name);
+
+        this.fs.copyTpl(
+            this.templatePath('controller.php'),
+            this.destinationPath('src/controllers/' + this.name + '.php'), { name: this.name, root_namespace: this.config.get('root_namespace') }
+        );
     }
-
-    this.prompt(prompts, function (props) {
-
-      if (!this.name) {
-        this.name = props.name;
-      }
-
-      this.root_namespace = props.root_namespace;
-      this.config.set('root_namespace', this.root_namespace);
-      this.log(this.config.get('root_namespace'));
-      done();
-    }.bind(this));
-
-    this.config.save();
-
-
-  },
-
-  writing: function () {
-    this.log('Generating controller for ' + this.name);
-
-    this.fs.copyTpl(
-        this.templatePath('controller.php'),
-        this.destinationPath('src/controllers/' + this.name + '.php'),
-        { name: this.name, root_namespace: this.root_namespace}
-    );
-  }
 });

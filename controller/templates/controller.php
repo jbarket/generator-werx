@@ -2,8 +2,8 @@
 <% if (root_namespace) { %>
 namespace <%= root_namespace %>\Controllers;
 <% } %>
-use <%= root_namespace %>\Models as Models;
-use <%= root_namespace %>\Managers as Managers;
+use <%= root_namespace %>\Models;
+use <%= root_namespace %>\Managers
 
 use werx\Forms\Form;
 
